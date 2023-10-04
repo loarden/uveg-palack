@@ -28,6 +28,17 @@ function Navbar() {
           <a href="/" className="navbar-brand">
             K es B <span className="d-block ">Glass</span>
           </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
           
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className=" navbar-nav">
@@ -53,7 +64,7 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <form class="d-flex">
+          <form class="d-flex collapse navbar-collapse">
             <input
               class="form-control me-2"
               type="search"
@@ -64,17 +75,6 @@ function Navbar() {
               Search
             </button>
           </form>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
         </div>
       </nav>
     </>
