@@ -1,0 +1,64 @@
+---
+import { getImage } from "astro:assets";
+import backgroundImage from '../assest/img/bottles-milk-arrangement-still-life.jpg'
+import '@fontsource/roboto'
+
+const optimizedBackgroundImage = await getImage({ src: backgroundImage })
+
+console.log(optimizedBackgroundImage)
+---
+
+<section style=`background-image: url(${optimizedBackgroundImage.src});` class="hero-section">
+  <div class="hero-wrapper container-sm">
+    <h1>Üveg palack nagykereskedés</h1>
+		<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </div>
+</section>
+
+<style>
+  	.hero-section {
+		background-color: #EEEFF1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		min-height: 300px;
+		height: calc(100vh - 350px);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	.hero-section::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(4, 114, 245, 0.2);
+		}
+	
+	.hero-wrapper {
+		width: 1000px;
+	}
+
+	p {
+		font-size: 1.3em;
+		margin: 0;
+		color: white;
+	}
+
+	h1 {
+			position: relative;
+			color: white;
+			text-align: center;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 500;
+			font-size: calc(1.6rem + 1.4vw);
+			margin-bottom: calc(20px + 0.2vw);
+			letter-spacing: 0.1em;
+			text-shadow: 0px 2px 14px rgba(0,0,0,0.49);
+	}
+</style>
