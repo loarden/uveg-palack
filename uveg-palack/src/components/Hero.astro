@@ -1,36 +1,55 @@
 ---
 import { getImage } from "astro:assets";
 import backgroundImage from '../assest/img/bottles-milk-arrangement-still-life.jpg'
-import '@fontsource/roboto'
 
 const optimizedBackgroundImage = await getImage({ src: backgroundImage })
-
-console.log(optimizedBackgroundImage)
 ---
 
-<section style=`background-image: url(${optimizedBackgroundImage.src});` class="hero-section">
-  <div class="hero-wrapper container-sm">
-    <h1>Üveg palack nagykereskedés</h1>
-		<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-  </div>
-</section>
+	<section id="carouselExampleIndicators" class="carousel slide hero-section" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active" data-bs-interval="100000">
+				<div class="hero-wrapper px-4" style=`background-image: url('${optimizedBackgroundImage.src}')`>
+					<h1>Üveg palack nagykereskedés</h1>
+					<p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				</div>
+			</div>
+			<div class="carousel-item" style="background-color: black" data-bs-interval="100000">
+				<img src="..." class="d-block w-100" alt="...">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</section>
 
 <style>
-  	.hero-section {
-		background-color: #EEEFF1;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: relative;
+  .hero-section {
 		width: 100%;
 		min-height: 300px;
-		height: calc(100vh - 350px);
+		height: calc(100vh - 300px);
+	}
+
+	.hero-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
 
-	.hero-section::before {
+	.carousel-inner, .carousel-item, .hero-wrapper{
+		width: 100%;
+		height: 100%;
+	}
+
+	.carousel-item::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -39,9 +58,10 @@ console.log(optimizedBackgroundImage)
 		height: 100%;
 		background: rgba(4, 114, 245, 0.2);
 		}
-	
-	.hero-wrapper {
-		width: 1000px;
+
+	.hero-image {
+		object-fit: cover;
+		object-position: center;
 	}
 
 	p {

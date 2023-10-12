@@ -1,7 +1,7 @@
 ---
 
 ---
-    <header class="">
+    <header class="sticky-top">
       <nav class="navbar navbar-expand-md shadow-md">
         <div class="container-xl">
           <div class="col">
@@ -57,31 +57,19 @@
       </nav>
     </header>
 
-    <script>
-      const button = document.querySelector('button')
-
-      console.log(button.attributes[5].value)
-      if(button.attributes[5].value === 'true') {
-        console.log('lol')
-      }
-      else if (button.attributes[5].value === 'true') {
-        console.log('kek')
-      }
-    </script>
-
     <style>
       a {
-        color: #fff;
+        color: #000;
       }
 
       .navbar {
         padding: calc(14px + 0.3vw) 0;
-        /* background-color: #fff; */
-        position: absolute;
+        background-color: #fff;
+/*         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 9999;
+        z-index: 9999; */
       }
 
       .icon {
@@ -92,6 +80,11 @@
         text-transform: uppercase;
         font-size: 0.9em;
         letter-spacing: 0.1em;
+        transition: 0.3s ease-in-out;
+      }
+
+      .nav-link:hover {
+        color: #0078FF;
       }
 
       .navbar-nav {
@@ -99,7 +92,7 @@
       }
 
       .menu-icon {
-        color: #fff;
+        color: #000;
         font-size: 2.2rem;
       }
 
