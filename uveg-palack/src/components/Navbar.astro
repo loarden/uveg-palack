@@ -1,7 +1,7 @@
 ---
 
 ---
-    <header class="sticky-top">
+    <header class="">
       <nav class="navbar navbar-expand-md shadow-md">
         <div class="container-xl">
           <div class="col">
@@ -57,23 +57,68 @@
       </nav>
     </header>
 
+    <script>
+      const menuButton = document.querySelector('.navbar-toggler')
+      const navbar = document.querySelector('.navbar')
+
+      menuButton.addEventListener('click', () => {
+        navbar.classList.toggle('open')
+      })
+
+      window.addEventListener('scroll', () => {
+        if(window.scrollY > 5) {
+          navbar.classList.add('scrolled')
+        }
+        else {
+          navbar.classList.remove('scrolled')
+        }
+      })
+    </script>
+
     <style>
       a {
-        color: #000;
+        color: #fff;
       }
 
       .navbar {
         padding: calc(14px + 0.3vw) 0;
-        background-color: #fff;
-/*         position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 9999; */
+        z-index: 9999;
+        transition: 0.2s linear;
       }
 
       .icon {
         font-size: 1.3em;
+      }
+
+      .open {
+        background-color: #fff !important;
+        box-shadow: 0 .5rem 1rem rgba( 0, 0, 0, .15);
+      }
+
+      .open .menu-icon {
+        color: #000;
+      }
+
+      .open a {
+        color: #000;
+      }
+
+      .scrolled {
+        background-color: #fff;
+        /* background-color: rgba(4, 114, 245, 0.2); */
+        box-shadow: 0 .5rem 1rem rgba( 0, 0, 0, .15);
+      }
+
+      .scrolled a {
+        color: #000;
+      }
+
+      .scrolled .menu-icon {
+        color: #000;
       }
 
       .nav-link {
@@ -92,7 +137,7 @@
       }
 
       .menu-icon {
-        color: #000;
+        color: #fff;
         font-size: 2.2rem;
       }
 
